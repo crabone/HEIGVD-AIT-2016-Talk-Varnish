@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Update the package index
-echo "Update the package index"
+echo "### Update the package index"
 apt-get update
 
 # Install Docker
-echo "Install Docker"
+echo "### Install Docker"
 wget -qO- https://get.docker.com/ | sh
 usermod -aG docker ubuntu
 
