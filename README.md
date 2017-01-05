@@ -18,6 +18,8 @@ slides de la présentation, veuillez vous rendre sur ce
 
 ## DÉMONSTRATION
 
+![Infrastructure](assets/images/infrastructure.png)
+
 ### INSTALLATION
 
 Pour utiliser l'infrastructure de démonstration, il faut préalablement
