@@ -1,4 +1,4 @@
-# PRÉSENTATION - WEB CACHING AVEC VARNISH
+# PRÉSENTATION - LE WEB CACHING AVEC VARNISH
 
 Ce repository contient une présentation de la suite logicielle
 [Varnish Cache](https://varnish-cache.org), ainsi qu'une infrastructure de
@@ -22,8 +22,8 @@ slides de la présentation, veuillez vous rendre sur ce
 
 ### INSTALLATION
 
-Pour utiliser l'infrastructure de démonstration, il faut préalablement
-installer le logiciel [Vagrant](https://www.vagrantup.com/downloads.html).
+Avant d'aller plus loin, il faut s'assurer que le logiciel
+[Vagrant](https://www.vagrantup.com/downloads.html) soit correctement installé.
 
 **Avertissement**: Pour utiliser l'infrastructure, il est impératif que la
 plage ip 192.168.42.0/24 ne soit pas déjà occupée.
