@@ -8,7 +8,7 @@ démonstration.
 
 * FRANCHINI Fabien ([@crab_one](https://twitter.com/crab_one))
 * HENNEBERGER Sébastien ([@Shen299](https://twitter.com/Shen299))
-* ROUILLER Bastien ([@B2B_16](https://twitter.com/B2B_16))
+* ROUILLER Bastien
 
 ## PRÉSENTATION
 
