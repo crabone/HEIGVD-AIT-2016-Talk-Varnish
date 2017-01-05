@@ -19,3 +19,18 @@ slides de la présentation, veuillez vous rendre sur ce
 ## DÉMONSTRATION
 
 ### INSTALLATION
+
+Pour utiliser l'infrastructure de démonstration, il faut préalablement
+installer le logiciel [Vagrant](https://www.vagrantup.com/downloads.html).
+
+**Avertissement**: Pour utiliser l'infrastructure, il est impératif que la
+plage ip 192.168.42.0/24 ne soit pas déjà occupée.
+
+```
+$ git clone https://github.com/crabone/HEIGVD-AIT-2016-Talk-Varnish/
+$ cd ./HEIGVD-AIT-2016-Talk-Varnish/demo
+$ vagrant up
+```
+
+Ensuite avec un navigateur web se rendre sur
+[http://192.168.42.44](http://192.168.42.44).
