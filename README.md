@@ -30,7 +30,7 @@ plage ip 192.168.42.0/24 ne soit pas déjà occupée.
 
 ```
 $ git clone https://github.com/crabone/HEIGVD-AIT-2016-Talk-Varnish/
-$ cd ./HEIGVD-AIT-2016-Talk-Varnish/demo
+$ cd ./HEIGVD-AIT-2016-Talk-Varnish/topology
 $ vagrant up
 ```
 
