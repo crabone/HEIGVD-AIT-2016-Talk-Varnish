@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
     <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
-    <title>Caching Web avec Varnish</title>
+    <title>Le caching web avec Varnish</title>
     <style>
       @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
       @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
@@ -123,9 +123,6 @@
       .right-column h3 {
         margin-top: 0.7em;
       }
-      .right-column img {
-        width: 100%;
-      }
     </style>
   </head>
   <body>
@@ -152,9 +149,8 @@ layout: false
 ### Au programme:
 
 * En bref
-* Architecture
 * Caching
-* Utilitaires
+* Fonctionnement
 * Démonstration
 * Q&A
 
@@ -172,18 +168,20 @@ layout: false
 
 `Varnish` est un reverse proxy HTTP principalement utilisé comme accelerateur
 web. `Varnish` conserve (cache) des fichiers (ou des fragments) en mémoire pour
-réduire le temps de réponse et la consomation de bande passante. Il se présente
-sous la forme d'une suite logicielle.
+réduire le temps de réponse et la consomation de bande passante.
 
 `Varnish` est riche en fonctionnalité et peut aussi être utilisé comme:
 
-* Parefeu
-* Bouclier anti-DDoS
-* Répartisseur de charge
-* Controleur d'accès
-* ...
+* Parefeu;
+* Bouclier anti-DDoS;
+* Répartisseur de charge;
+* Controleur d'accès;
+* Et tant d'autres manières..
 
-**Particularité:** Conçu pour fonctionner sur du matériel et des os modernes.
+**Particularité:** Il est conçu pour fonctionner sur du matériel et des os
+modernes (64-bit uniquement).
+
+![Varnish Software logo](assets/images/varnish-logo.png)
 
 ]
 
@@ -192,28 +190,20 @@ sous la forme d'une suite logicielle.
 .left-column[
   ## En bref
   ### Qu'est-ce donc ?
-  ### Varnish Cache vs. Varnish Plus
+  ### Varnish Cache et Varnish Plus
 ]
 .right-column[
+
+`Varnish` se présente sous la forme d'une suite logicielle, déclinée en deux
+distributions: `Varnish Cache` et `Varnish Plus`.
 
 ]
 
 ---
 
 .left-column[
-  ## En profondeur
-  ### Architecture
-]
-.right-column[
-
-]
-
----
-
-.left-column[
-  ## En profondeur
-  ### Architecture
-  ### Utilitaires
+  ## Le caching
+  ### Fonctionnement
 ]
 .right-column[
 
@@ -228,16 +218,45 @@ sous la forme d'une suite logicielle.
 ]
 .right-column[
 
+![Object lifetime](assets/images/objectlifetime.png)
+
 ]
 
 ---
 
 .left-column[
-  ##
+  ## En profondeur
+  ### Architecture
+]
+.right-column[
+
+![Varnish architecture](assets/images/architecture.png)
+
+]
+
+---
+
+.left-column[
+  ## En profondeur
+  ### Architecture
+  ### VCL
 ]
 .right-column[
 
 ]
+
+---
+
+.left-column[
+  ## En profondeur
+  ### Architecture
+  ### VCL
+  ### Utilitaires
+]
+.right-column[
+
+]
+
     </textarea>
     <script src="assets/js/remark-latest.min.js"></script>
     <script>

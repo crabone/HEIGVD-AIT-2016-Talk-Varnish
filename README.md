@@ -1,6 +1,6 @@
 # PRÉSENTATION - LE WEB CACHING AVEC VARNISH
 
-Ce repository contient une présentation de la suite logicielle
+Ce dépôt contient une présentation de la suite logicielle
 [Varnish Cache](https://varnish-cache.org), ainsi qu'une infrastructure de
 démonstration.
 
@@ -12,8 +12,8 @@ démonstration.
 
 ## PRÉSENTATION
 
-Ce repository supporte la fonctionnalité `Github-Pages`. Pour visionner les
-slides de la présentation, veuillez vous rendre sur ce 
+Ce dépôt supporte la fonctionnalité `Github-Pages`. Pour visionner les slides
+de la présentation, veuillez vous rendre sur ce 
 [lien](https://crabone.github.io/HEIGVD-AIT-2016-Talk-Varnish). 
 
 ## DÉMONSTRATION
@@ -24,6 +24,9 @@ slides de la présentation, veuillez vous rendre sur ce
 
 Avant d'aller plus loin, il faut s'assurer que le logiciel
 [Vagrant](https://www.vagrantup.com/downloads.html) soit correctement installé.
+
+De plus il est recommandé d'installer un client HTTP simple, comme
+[HTTPie](https://httpie.org/#installation), sur la machine hôte.
 
 **Avertissement**: Pour utiliser l'infrastructure, il est impératif que la
 plage ip 192.168.42.0/24 ne soit pas déjà occupée.
@@ -37,8 +40,7 @@ $ vagrant up
 Ensuite avec un navigateur web se rendre sur
 [http://192.168.42.42](http://192.168.42.42).
 
-## TODO
+## TO-DO
 
-* Automatiser l'installation de Wordpress
 * Élaborer un scénario de démonstration
 * Faire les slides de la présentation
