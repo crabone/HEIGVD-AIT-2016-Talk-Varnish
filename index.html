@@ -133,11 +133,9 @@ class: center, middle, inverse
 ---
 
 # LE CACHING WEB AVEC VARNISH
-Franchini Fabien ([@crab_one](https://twitter.com/crab_one)), 
-Henneberger Sébastien ([@Shen299](https://twitter.com/Shen299)),<br />
-Rouiller Bastien<br />
+Franchini Fabien, Henneberger Sébastien et Rouiller Bastien<br />
 27 Janvier 2017
-
+.footnote[...[Dépôt](https://github.com/crabone/HEIGVD-AIT-2016-Talk-Varnish) de la présentation]
 ---
 
 layout: false
@@ -207,6 +205,20 @@ distributions: `Varnish Cache` et `Varnish Plus`.
 ]
 .right-column[
 
+![Cache hit](assets/images/httpcachehit.png)
+
+![Cache miss](assets/images/httpcachemiss.png)
+
+]
+
+---
+
+.left-column[
+  ## Le caching
+  ### Fonctionnement
+]
+.right-column[
+
 ]
 
 ---
@@ -217,6 +229,9 @@ distributions: `Varnish Cache` et `Varnish Plus`.
   ### Varnish
 ]
 .right-column[
+
+D'une part, `Varnish` se base sur les entêtes HTTP des réponses, pour
+déterminer le comportement de leur mise en cache.
 
 ![Object lifetime](assets/images/objectlifetime.png)
 
