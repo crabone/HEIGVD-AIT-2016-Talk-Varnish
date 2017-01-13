@@ -20,6 +20,8 @@ de la présentation, veuillez vous rendre sur ce
 
 ![Infrastructure](assets/images/infrastructure.png)
 
+* Reverse proxy: `varnish 4.0.3`
+
 ### INSTALLATION
 
 Avant d'aller plus loin, il faut s'assurer que le logiciel
