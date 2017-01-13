@@ -205,6 +205,11 @@ distributions: `Varnish Cache` et `Varnish Plus`.
 ]
 .right-column[
 
+Il y a deux cas de figure lorsque le client accède au site web :
+1. Varnish contient l'objet demandé (Cache-hit) et le renvoie directement au client.
+
+2. Varnish ne contient pas l'objet ou ce dernier a été modifié (Cache miss) et envoye une requête au serveur web
+
 ![Cache hit](assets/images/httpcachehit.png)
 
 ![Cache miss](assets/images/httpcachemiss.png)
@@ -219,7 +224,20 @@ distributions: `Varnish Cache` et `Varnish Plus`.
 ]
 .right-column[
 
-divers entête pour contrôler le cache
+Entêtes HTTP utilisés pour le contrôle du cache :
+
+* Cache-control
+	* no-cache : indique qu'il ne faut pas mettre en cache
+	* max-age : durée de vie de l'objet en cache
+	
+* Vary
+	* Accept-encoding : uniquement une même représentation de l'objet est demandée (html, json)
+	
+* Last-Modified : dernière date de modification, envoyée par le serveur
+* If-Modified-Since : timestamp de la dernière page obtenue, envoyée par le client
+
+* Age : âge en cache de la page fournie
+
 ]
 
 ---
@@ -242,9 +260,9 @@ Voici les différents temps de vie de l'objet en cache :
 
 1. fresh object 		: l'objet est "frais" et donc peut être renvoyé au client.
 
-2. stale object 		: l'objet est encore utilisable si le web-server n'est pas atteignable ou surchargé.
+2. stale object 		: l'objet est encore utilisable si le serveur web n'est pas atteignable ou surchargé.
 
-3. If-Modified-Since    : l'objet est renvoyé si If-Modified-Since est mentionné et le statut 304 Not Modified.
+3. If-Modified-Since    : l'objet est renvoyé si aucune modification n'a été faite depuis If-Modified-Since.
 
 Une fois ces délais dépassés, l'objet est supprimé du cache.
 ]
