@@ -193,24 +193,21 @@ modernes (64-bit uniquement).
 .right-column[
 
 `Varnish` se présente sous la forme d'une suite logicielle, déclinée en deux
-distributions: `Varnish Cache` et `Varnish Plus`.
+distributions.
 	    
-`Varnish cache`:
-  * projet open source, license BSD
-  * ssl/tls frontend support (avec hitch)
-  * plateformes supportées:
-    * RedHat Enterprise Linux 6/7
-    * Ubuntu Linux 12.04/14.04
-    * Debian Linux 7
-    * FreeBSD 9/10
+#### Varnish Cache
+* Version Open Source (BSD);
+* Suite logicielle en ligne de commande;
+* Support de SSL/TLS (frontend uniquement).
 
-`Varnish cache plus`:
-  * commerciale (démarre à 31'000$)
-  * monitoring / support profesionnel
-  * ssl/tls frontend/backend support
-  * Varnish High Availability (VHA)
-  * Varnish Custom Statistics (VCS)
-  * Mêmes Plateformes supportées (hormis FreeBSD 9/10)
+#### Varnish Plus
+* Version commerciale de la suite;
+  * Prix de base: 31'000$;
+  * Support client.
+* Support de SSL/TLS (frontend et backend);
+* Varnish Administration Console (VAC);
+* Varnish High Availability (VHA);
+* Varnish Custom Statistics (VCS).
 
 ]
 
@@ -222,12 +219,16 @@ distributions: `Varnish Cache` et `Varnish Plus`.
 ]
 .right-column[
 
-Il y a deux cas de figure lorsque le client accède au site web :
-1. Varnish contient l'objet demandé (Cache-hit) et le renvoie directement au client.
+Lorsqu'un client accède à un noeud, alors deux cas de figure se présentent:
 
-2. Varnish ne contient pas l'objet ou ce dernier a été modifié (Cache miss) et envoye une requête au serveur web
+1\. `Varnish` contient une copie de l'objet en cache. Il le renvoie directement
+au client (Cache-hit).
 
 ![Cache hit](assets/images/httpcachehit.png)
+
+2\. `Varnish` ne contient pas de copie de l'objet (ou ce dernier a changé). Il
+envoye une nouvelle requête au noeud et renvoit sa réponse, au client 
+(Cache-miss).
 
 ![Cache miss](assets/images/httpcachemiss.png)
 
