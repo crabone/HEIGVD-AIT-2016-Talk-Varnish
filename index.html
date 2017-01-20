@@ -297,19 +297,15 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
 
 ]
 	    
-* The main block is the Manager process (contained in varnishd program).
-The task of the Manager process is to delegate tasks, including caching, to child processes.
-Child process has no backwards communication to its parent, the Manager.
+* Le Manager : (contenu dans le programme varnishd).
+Sa fonction est de déléguer les tâches aux processus enfants.
+Ces derniers ne communiquent pas avec le parent, le manager.
 
-* The Cacher process:
-listen to client requests
-manage worker threads
-store caches
-log traffic
-update counters for statistics
+* Le Cacher :
+Sa fonction est de gérer les worker threads, de stocker les caches et de logger le traffic.
 
-* VCC process:
-Translation of the VCL to C (with a normal C compiler, typically gcc)
+* Le VCC :
+Il traduit le VCL en C (avec un compilateur C normal, typiquement gcc)
 
 ---
 
