@@ -288,6 +288,29 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
 ]
 .right-column[
 
+
+VCL est un language permettant de définir les règles régissant la gestion du cache.
+
+Exemple d'utilisation :
+
+* Forcez la mise en cache des images pour 5 minutes 
+```
+sub vcl_fetch {
+        if (req.url ~ "\.jpg$") {
+                set beresp.ttl = 300;
+        }
+}
+```
+
+* Ne pas mettre en cache la page d'accueil du site
+```
+sub vcl_recv {
+        if (req.url ~ "^/index\.html" ||
+            req.url ~ "^/$") { return(pass); }
+}
+```
+
+
 ]
 
 ---
@@ -299,6 +322,11 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
   ### Utilitaires
 ]
 .right-column[
+
+	varnish adm
+	varnish static
+	varnish vagend --> requête REST
+	... non documenté
 
 ]
 
