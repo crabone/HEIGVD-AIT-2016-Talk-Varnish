@@ -296,6 +296,16 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
 ![Varnish architecture](assets/images/architecture.png)
 
 ]
+	    
+* Le Manager : (contenu dans le programme varnishd).
+Sa fonction est de déléguer les tâches aux processus enfants.
+Ces derniers ne communiquent pas avec le parent, le manager.
+
+* Le Cacher :
+Sa fonction est de gérer les worker threads, de stocker les données en cache et de logger le traffic.
+
+* Le VCC :
+Il traduit le VCL en C (avec un compilateur C normal, typiquement gcc)
 
 ---
 
@@ -368,6 +378,19 @@ client c1 {
 } -run
 ```
 
+]
+	    
+---
+
+.left-column[
+  # Démonstration
+]
+.right-column[
+	    
+![Varnish architecture](assets/images/architecture.png)
+	   
+
+	    
 ]
 
     </textarea>
