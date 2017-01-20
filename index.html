@@ -296,6 +296,20 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
 ![Varnish architecture](assets/images/architecture.png)
 
 ]
+	    
+* The main block is the Manager process (contained in varnishd program).
+The task of the Manager process is to delegate tasks, including caching, to child processes.
+Child process has no backwards communication to its parent, the Manager.
+
+* The Cacher process:
+listen to client requests
+manage worker threads
+store caches
+log traffic
+update counters for statistics
+
+* VCC process:
+Translation of the VCL to C (with a normal C compiler, typically gcc)
 
 ---
 
