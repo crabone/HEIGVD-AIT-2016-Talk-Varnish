@@ -245,7 +245,7 @@ envoye une nouvelle requête au noeud et renvoit sa réponse, au client
 Entêtes HTTP utilisés pour le contrôle du cache :
 
 * Cache-control
-	* no-cache : indique qu'il ne faut pas mettre en cache
+	* no-cache : doit demander au serveur si la ressource peut être réutilisée
 	* max-age : durée de vie de l'objet en cache
 	
 * Vary
@@ -341,10 +341,32 @@ sub vcl_recv {
 ]
 .right-column[
 
-	varnish adm
-	varnish static
-	varnish vagend --> requête REST
-	... non documenté
+Plusieurs utilitaires existent dans `Varnish` :
+
+* varnishadm : permet de contrôler une instance varnish qui s'exécute
+
+* varnishstat : affiche des statistiques relatives au caching
+
+* vagent 2 : agent vagrant permettant de faire des requête REST afin de contrôler à distance et monitorer varnish 
+
+* varnishtest : permet de simuler une architecture
+
+```
+varnishtest "#1029"
+
+server s1 {
+        rxreq
+        expect req.url == "/bar"
+        txresp -gzipbody {[bar]}
+} -start
+
+client c1 {
+        txreq -url "/bar" -hdr "Accept-Encoding: gzip"
+        rxresp
+        gunzip
+        expect resp.bodylen == 5
+} -run
+```
 
 ]
 
