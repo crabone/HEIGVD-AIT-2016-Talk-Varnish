@@ -273,20 +273,15 @@ Durée de vie de l'objet en cache.
 ]
 .right-column[
 
-D'une part, `Varnish` se base sur les entêtes HTTP des réponses, pour
+`Varnish` se base principalement sur les entêtes HTTP des réponses, pour
 déterminer le comportement de leur mise en cache.
 
 ![Object lifetime](assets/images/objectlifetime.png)
 
-<!-- Si le "Cache-control" est parametré en "no-cache", Varnish ne met rien en cache. 
-Dans le cas contraire, il met les objets de la page en cache. Les objets ont plusieurs durées de vie. -->
 Voici les différents temps de vie de l'objet en cache :
-
-1. fresh object 		: l'objet est "frais" et donc peut être renvoyé au client.
-
-2. stale object 		: l'objet est encore utilisable si le serveur web n'est pas atteignable ou surchargé.
-
-3. If-Modified-Since    : l'objet est renvoyé si aucune modification n'a été faite depuis If-Modified-Since.
+1. fresh object: l'objet est "frais" et donc peut être renvoyé au client.
+2. stale object: l'objet est encore utilisable si le serveur web n'est pas atteignable ou surchargé.
+3. If-Modified-Since: l'objet est renvoyé si aucune modification n'a été faite depuis If-Modified-Since.
 
 Une fois ces délais dépassés, l'objet est supprimé du cache.
 ]
@@ -301,17 +296,35 @@ Une fois ces délais dépassés, l'objet est supprimé du cache.
 
 ![Varnish architecture](assets/images/architecture.png)
 
+**Manager:** 
+* Applique les changements de configuration;
+* Délègue les tâches au Cacher et au VCC;
+* Surveille `Varnish`;
+* Fourni un invite de commande.
+
+**VCC:**
+* Traduit le VCL en C (Qui est ensuite traité par un compilateur traditionnel,
+tel que `gcc`).
 ]
-	    
-* Le Manager : (contenu dans le programme varnishd).
-Sa fonction est de déléguer les tâches aux processus enfants.
-Ces derniers ne communiquent pas avec le parent, le manager.
 
-* Le Cacher :
-Sa fonction est de gérer les worker threads, de stocker les données en cache et de logger le traffic.
+---
 
-* Le VCC :
-Il traduit le VCL en C (avec un compilateur C normal, typiquement gcc)
+.left-column[
+  ## En profondeur
+  ### Architecture
+]
+.right-column[
+
+![Varnish architecture](assets/images/architecture.png)
+
+**Cacher:**
+* Écoute les requêtes clientes;
+* Gère les worker threads;
+* Sauve les objets en cache;
+* Log le traffic;
+* Met à jour les conteurs pour les statistiques.
+
+]
 
 ---
 
@@ -321,7 +334,6 @@ Il traduit le VCL en C (avec un compilateur C normal, typiquement gcc)
   ### VCL
 ]
 .right-column[
-
 
 VCL est un language permettant de définir les règles régissant la gestion du cache.
 
