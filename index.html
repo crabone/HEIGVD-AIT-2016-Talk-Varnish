@@ -343,7 +343,7 @@ interne, il est traduit en C.
 
 Forcer la mise en cache de toutes les images, au format _.jpg_, pendant 5 minutes.
 
-```
+```c
 sub vcl_fetch {
         if (req.url ~ "\.jpg$") {
                 set beresp.ttl = 300;
@@ -353,7 +353,7 @@ sub vcl_fetch {
 
 Ne pas mettre en cache la page d'accueil _index.html_ du site.
 
-```
+```c
 sub vcl_recv {
         if (req.url ~ "^/index\.html" ||
             req.url ~ "^/$") { return(pass); }
