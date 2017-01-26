@@ -335,11 +335,14 @@ tel que `gcc`).
 ]
 .right-column[
 
-VCL est un language permettant de définir les règles régissant la gestion du cache.
+Le Varnish Configuration Language (VCL) est le langage de configuration de
+`Varnish`. Il est notamment utilisé pour écrire ses politiques de caching. En
+interne, il est traduit en C.
 
-Exemple d'utilisation :
+**Exemples d'utilisation:**
 
-* Forcer la mise en cache des images pour 5 minutes 
+Forcer la mise en cache de toutes les images, au format _.jpg_, pendant 5 minutes.
+
 ```
 sub vcl_fetch {
         if (req.url ~ "\.jpg$") {
@@ -348,14 +351,14 @@ sub vcl_fetch {
 }
 ```
 
-* Ne pas mettre en cache la page d'accueil du site
+Ne pas mettre en cache la page d'accueil _index.html_ du site.
+
 ```
 sub vcl_recv {
         if (req.url ~ "^/index\.html" ||
             req.url ~ "^/$") { return(pass); }
 }
 ```
-
 
 ]
 
