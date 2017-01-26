@@ -242,19 +242,25 @@ envoye une nouvelle requête au noeud et renvoit sa réponse, au client
 ]
 .right-column[
 
-Entêtes HTTP utilisés pour le contrôle du cache :
+Le protocole HTTP prévoit des entêtes pour émettre des directives de contrôle
+du caching des objets:
 
-* Cache-control
-	* no-cache : doit demander au serveur si la ressource peut être réutilisée
-	* max-age : durée de vie de l'objet en cache
-	
-* Vary
-	* Accept-encoding : uniquement une même représentation de l'objet est demandée (html, json)
-	
-* Last-Modified : dernière date de modification, envoyée par le serveur
-* If-Modified-Since : timestamp de la dernière page obtenue, envoyée par le client
+**Cache-Control:**
+* **no-cache:** Le noeud doit valider la réutilisation de l'objet;
+* **no-store:** L'objet ne dois pas être sauvé dans le cache;
+* **max-age:** Durée de vie maximale de l'objet en cache.
 
-* Age : âge en cache de la page fournie
+**Vary:**
+* **Accept-encoding:** uniquement une même représentation de l'objet est demandée (html, json)
+
+**Last-Modified:**
+dernière date de modification, envoyée par le serveur
+
+**If-Modified-Since:**
+timestamp de la dernière page obtenue, envoyée par le client
+
+**Age:**
+Durée de vie de l'objet en cache.
 
 ]
 
