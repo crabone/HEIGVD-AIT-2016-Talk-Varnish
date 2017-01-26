@@ -322,7 +322,7 @@ tel que `gcc`).
 * Gère les worker threads;
 * Sauve les objets en cache;
 * Log le traffic;
-* Met à jour les conteurs pour les statistiques.
+* Met à jour les compteurs pour les statistiques.
 
 ]
 
@@ -339,7 +339,7 @@ VCL est un language permettant de définir les règles régissant la gestion du 
 
 Exemple d'utilisation :
 
-* Forcez la mise en cache des images pour 5 minutes 
+* Forcer la mise en cache des images pour 5 minutes 
 ```
 sub vcl_fetch {
         if (req.url ~ "\.jpg$") {
