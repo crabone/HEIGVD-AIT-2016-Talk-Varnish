@@ -42,7 +42,3 @@ $ vagrant up
 Ensuite avec un navigateur web se rendre sur
 [http://192.168.42.42](http://192.168.42.42).
 
-## TO-DO
-
-* Élaborer un scénario de démonstration
-* Faire les slides de la présentation
